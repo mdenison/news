@@ -5,7 +5,7 @@ NOTICE
  
  Thank you for reading!  
 
- [![Build Status](http://www.commitlog.org:8080/buildStatus/icon?job=Spirit News 2)](http://www.commitlog.org:8080/job/Spirit%20News%202/)                    
+ [![Build Status](http://www.commitlog.org:8080/buildStatus/icon?job=Spirit News)](http://www.commitlog.org:8080/job/Spirit%20News/)
 
 ##What is Spirit?
  Spirit-News is a simple blogging system for the Faculty of Computer Science of the University of Applied Sciences Schmalkalden!
