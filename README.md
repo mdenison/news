@@ -1,5 +1,5 @@
 ##Jenkins-Status:
-[![Build Status](http://www.commitlog.org:8080/buildStatus/icon?job=Spirit News)](http://www.commitlog.org:8080/job/Spirit%20News/)
+[![Build Status](http://www.commitlog.org:8080/buildStatus/icon?job=Spirit%20News)](http://www.commitlog.org:8080/job/Spirit%20News/)
 
 NOTICE
 =========
