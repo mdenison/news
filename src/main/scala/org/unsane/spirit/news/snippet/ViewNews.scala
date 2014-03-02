@@ -8,15 +8,15 @@
  * are met:
  *
  * 1. Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
+ * notice, this list of conditions and the following disclaimer.
  *
  * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
  *
  * 3. Neither the name of the author nor the names of his contributors
- *    may be used to endorse or promote products derived from this software
- *    without specific prior written permission.
+ * may be used to endorse or promote products derived from this software
+ * without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHORS ``AS IS'' AND ANY EXPRESS OR
  * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
@@ -40,7 +40,7 @@ import net.liftweb.json.JsonDSL._
 import model.{Config, Entry}
 import net.liftweb.common.{Empty, Box, Full, Loggable}
 import net.liftweb.http.{SHtml, S}
-import net.liftweb.http.js.{JE,JsExp}
+import net.liftweb.http.js.{JE, JsExp}
 
 /**
  * @author Marcus Denison
@@ -57,27 +57,25 @@ class ViewNews extends SpiritHelpers with Loggable with Config {
       logger info ("Searching for " + s + "!")
       val validSearch =
         loadSemesters("BaI") :: loadSemesters("BaWI") ::
-        loadSemesters("BaITS") :: loadSemesters("BaMuMa") :: loadSemesters("BaMC") ::
-        loadSemesters("Ma") :: loadSemesters("Other") :: Nil
+          loadSemesters("BaITS") :: loadSemesters("BaMuMa") :: loadSemesters("BaMC") ::
+          loadSemesters("Ma") :: loadSemesters("Other") :: Nil
 
       if (validSearch.flatten.contains(s)) {
-        Entry.findAll.filter { entry =>
-          entry.contains(s) || entry.contains("semester")
+        Entry.findAll.filter {
+          entry => entry.contains(s) || entry.contains("semester")
         }.sortWith(
-          (entry1, entry2) => (entry1 > entry2)
-        )
+            (entry1, entry2) => entry1 > entry2
+          )
       } else {
-          Entry.find("nr" -> s) match {
-            case Full(x) => List(x)
-            case _ => Entry.findAll.sortWith(
-                        (entry1, entry2) => (entry1 > entry2)
-                      )
-          }
+        Entry.find("nr" -> s) match {
+          case Full(x) => List(x)
+          case _ => Entry.findAll.sortWith((entry1, entry2) => entry1 > entry2)
         }
+      }
 
     case _ =>
       Entry.findAll.sortWith(
-        (entry1, entry2) => (entry1 > entry2)
+        (entry1, entry2) => entry1 > entry2
       )
   }
 
@@ -89,10 +87,9 @@ class ViewNews extends SpiritHelpers with Loggable with Config {
   def classNameChooser() = {
 
     val classNames =
-      "alle" :: allSemesterAsList4News zip  "Alle" :: allClassNamesAsLowercase
+      "alle" :: allSemesterAsList4News zip "Alle" :: allClassNamesAsLowercase
 
-    val (name2, js) = SHtml.ajaxCall(JE.JsRaw("this.value"),
-                                     s => (S.redirectTo("/semsearch/" + s))): (String, JsExp)
+    val (_, js): (String, JsExp) = SHtml.ajaxCall(JE.JsRaw("this.value"), s => S.redirectTo("/semsearch/" + s))
 
     SHtml.select(classNames.toSeq, Full(S.param("search").openOr("Alle")), x => x, "onchange" -> js.toJsCmd)
 
@@ -100,16 +97,17 @@ class ViewNews extends SpiritHelpers with Loggable with Config {
 
   def render = {
 
-   ".entry" #> news.map( entry =>
-     ".writer"    #> entry.writer.value.toString &
-     ".subject"   #> <a href={"/entry/"+entry.nr.value.toString}>
-                     {entry.subject.value.toString}</a> &
-     ".nr"        #> entry.nr.value.toString &
-     ".lifecycle" #> entry.lifecycle.value.toString &
-     ".date"      #> Text(entry.date.value.toString.substring(4, 11) + ". " +
-                          entry.date.value.toString.substring(17, 22)) &
-     ".semester"  #> sem2link(semesterChanger(entry.semester.value.toString).split(" ")) &
-     ".news"      #> TextileParser.toHtml(entry.news.value.toString))
+    ".entry" #> news.map(entry =>
+      ".writer" #> entry.writer.value.toString &
+        ".subject" #> <a href={"/entry/" + entry.nr.value.toString}>
+          {entry.subject.value.toString}
+        </a> &
+        ".nr" #> entry.nr.value.toString &
+        ".lifecycle" #> entry.lifecycle.value.toString &
+        ".date" #> Text(entry.date.value.toString.substring(4, 11) + ". " +
+          entry.date.value.toString.substring(17, 22)) &
+        ".semester" #> sem2link(semesterChanger(entry.semester.value.toString).split(" ")) &
+        ".news" #> TextileParser.toHtml(entry.news.value.toString))
 
   }
 

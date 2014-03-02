@@ -114,8 +114,8 @@ class Schedule extends Config {
       <div class={"event " + cycle}>
        <span class={"eventTitle "}>{x.titleShort.get}</span><div class={icon}></div>
        <div style="clear:both"></div>
-       {(if (x.group.value.replaceAll("""\u00A0""", "") == "") ""
-           else <div>{"Gruppe: " + x.group.value.replaceAll("""\u00A0""", "")}</div>)}
+       {if (x.group.value.replaceAll("""\u00A0""", "") == "") ""
+        else <div>{"Gruppe: " + x.group.value.replaceAll("""\u00A0""", "")}</div>}
        <div style="float:left">{x.appointment.get.location.place.building + ":" + x.appointment.get.location.place.room}</div>
        <div style="float:right">{x.member.get.map(_.name.replaceAll("_","")).mkString(" ")}</div>
        <div style="clear:both"></div>
@@ -142,11 +142,11 @@ class Schedule extends Config {
                                             S.redirectTo("/schedule")}): (String, JsExp) 
 
     SHtml.select(Seq(("g", "Gerade"),("u", "Ungerade"),("w", "Alles")),
-      (weekTypeVar.get match {
+      weekTypeVar.get match {
         case "u" => Full("u")
         case "g" => Full("g")
         case _ => Full("w")
-      }), x => x, "onchange" -> js.toJsCmd)
+      }, x => x, "onchange" -> js.toJsCmd)
   }
 
   /**
