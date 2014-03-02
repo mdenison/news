@@ -3,7 +3,9 @@ NOTICE
 
  **This project was done with little knowledge on Scala and Lift! Some parts of the code should not be taken as best practice  examples or examples at all. Refactoring  is planned.**
  
- Thank you for reading!                      
+ Thank you for reading!  
+
+ [![Build Status](http://www.commitlog.org:8080/buildStatus/icon?job=Spirit News 2)](http://www.commitlog.org:8080/job/Spirit%20News%202/)                    
 
 ##What is Spirit?
  Spirit-News is a simple blogging system for the Faculty of Computer Science of the University of Applied Sciences Schmalkalden!
