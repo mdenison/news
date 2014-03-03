@@ -37,10 +37,11 @@ import scala.xml._
 import net.liftweb.util.Helpers._
 import net.liftmodules.textile._
 import net.liftweb.json.JsonDSL._
-import model.{Config, Entry}
+import model.{Entry}
 import net.liftweb.common.{Empty, Box, Full, Loggable}
 import net.liftweb.http.{SHtml, S}
 import net.liftweb.http.js.{JE, JsExp}
+import org.unsane.spirit.news.lib.Config
 
 /**
  * @author Marcus Denison

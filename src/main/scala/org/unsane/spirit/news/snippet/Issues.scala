@@ -5,11 +5,10 @@ import net.liftweb.http.js.JsCmds._
 import net.liftweb.http.js.JE.{JsRaw, Call}
 import net.liftweb.http.js.{JE, JsonCall, JsCmd}
 import net.liftweb.util.Mailer._
-import org.unsane.spirit.news.model.Config
 import net.tanesha.recaptcha.{ReCaptchaFactory, ReCaptcha}
 import net.liftweb.common._
 import net.liftweb.util.{FieldIdentifier, FieldError, Mailer, Props}
-import org.unsane.spirit.news.lib.{ ReCaptcha => RC }
+import org.unsane.spirit.news.lib.{ReCaptcha => RC, Config}
 import net.liftweb.http.{SessionVar, SHtml, S}
 
 

@@ -30,14 +30,14 @@
  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package org.unsane.spirit.news
-package model
+package org.unsane.spirit.news.lib
 
 import javax.mail._
 import javax.mail.internet._
 import java.util.Properties
 import net.liftweb.http.S
 import net.liftweb.common.Loggable
+import org.unsane.spirit.news.model.User
 
 /**
  * Sending an email to the Array that will be given to send()

@@ -88,10 +88,8 @@ class Boot extends Loggable with Config {
     val scheduleAdmins = loadProps("scheduleAdmins").split(";")
 
     // Opens connection to MongoDB with user/pass "spirit_news"
-    MongoDB.defineDbAuth(DefaultMongoIdentifier,
-      MongoAddress(MongoHost("127.0.0.1", 27017), "spirit_news"),
-      "spirit_news",
-      "spirit_news")
+    MongoDB.defineDb(DefaultMongoIdentifier,
+      MongoAddress(MongoHost("127.0.0.1", 27017), "spirit_news"))
 
     LiftRules.addToPackages("org.unsane.spirit.news")
 

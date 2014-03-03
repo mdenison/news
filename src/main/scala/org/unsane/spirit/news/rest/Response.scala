@@ -49,6 +49,7 @@ import java.util.{Date, Locale}
 
 import java.text.SimpleDateFormat
 import net.liftweb.json.JsonAST.JValue
+import org.unsane.spirit.news.lib.Config
 
 object Response extends Loggable with Config with RestHelper {
 

@@ -30,8 +30,7 @@
  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package org.unsane.spirit.news
-package model
+package org.unsane.spirit.news.lib
 
 import dispatch._
 import dispatch.classic._

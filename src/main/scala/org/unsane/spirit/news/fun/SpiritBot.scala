@@ -41,6 +41,7 @@ import scala.actors.Actor._
 import org.unsane.spirit.news.snippet._
 import scala.xml._
 import org.unsane.spirit.news.model._
+import org.unsane.spirit.news.lib.Config
 
 /**
   * SpiritBot is a IRC Bot that sends the News to a Channel on the IRC Network

@@ -1,11 +1,11 @@
 package org.unsane.spirit.news.lib
 
 import java.nio.file._
-import org.unsane.spirit.news.model.Config
 import net.liftweb.common.Loggable
 import java.nio.file.WatchEvent.{Modifier, Kind}
 import java.nio.file.StandardWatchEventKinds._
 import java.io.{File, IOException}
+import org.unsane.spirit.news.lib.Config
 
 object UploadWatcher extends Loggable with Config {
 

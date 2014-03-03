@@ -30,13 +30,13 @@
  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package org.unsane.spirit.news
-package model
+package org.unsane.spirit.news.lib
 
 import java.util.Properties
 import java.io._
 import collection.mutable.ArrayBuffer
 import net.liftweb.json.ext._Interval
+import org.unsane.spirit.news.model.User
 
 /**
  * Could have used Lift's Props, but using java.util.Properties fitted the solution in a better way.

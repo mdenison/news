@@ -1,8 +1,8 @@
 package org.unsane.spirit.news
 package snippet
 
-import model.Config
 import net.liftweb.http.S
+import org.unsane.spirit.news.lib.Config
 
 /**
  * Routing the user either to the New cool schedule or to the old uncool schedule.

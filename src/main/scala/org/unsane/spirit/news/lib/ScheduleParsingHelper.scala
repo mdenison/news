@@ -4,8 +4,8 @@ import actors.Actor
 import net.liftweb.http.js.JsCmd
 import java.io.{InputStreamReader, File, BufferedReader}
 import net.liftweb.http.S
-import org.unsane.spirit.news.model.Config
 import net.liftweb.common.{Full, Loggable}
+import org.unsane.spirit.news.lib.Config
 
 
 object ScheduleParsingHelper {

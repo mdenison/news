@@ -39,6 +39,7 @@ import java.util._
 import net.liftweb.http.S
 import net.liftweb.common.Loggable
 import scala.collection.JavaConversions._
+import org.unsane.spirit.news.lib.Config
 
 trait LDAPAuth extends Loggable with Config {
   private val useLDAPAuth = (loadProps("Productive") == "yes" || loadProps("UseLDAPAuth") == "yes")

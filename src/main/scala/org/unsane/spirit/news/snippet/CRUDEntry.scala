@@ -48,6 +48,7 @@ import net.liftweb.json.JsonDSL._
 import model._
 import net.liftweb.util.Props
 import scala.concurrent.stm._
+import org.unsane.spirit.news.lib.{Spreader, Tweet, Config, MailHandler}
 
 class CRUDEntry extends Loggable with SpiritHelpers with Config with EntryPreview {
 

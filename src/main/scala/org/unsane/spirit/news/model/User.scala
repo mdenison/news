@@ -40,6 +40,7 @@ import net.liftweb.http.S
 import net.liftweb.util.Helpers._
 import net.liftweb.common._
 import net.liftweb.sitemap.Loc.Hidden
+import org.unsane.spirit.news.lib.Config
 
 class User extends MegaProtoUser[User] {
   def getSingleton = User

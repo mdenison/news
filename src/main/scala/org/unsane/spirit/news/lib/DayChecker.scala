@@ -30,16 +30,15 @@
  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package org.unsane.spirit.news
-package model
+package org.unsane.spirit.news.lib
 
 import scala.actors._
-import snippet.SpiritHelpers
 import java.text.SimpleDateFormat
 import java.util._
 import net.liftweb.common.Loggable
+import org.unsane.spirit.news.snippet.SpiritHelpers
 
- /**
+/**
   * DayChecker calls the method dayCheck every day to see if there are posts to delete
   */
 object DayChecker extends Actor with Loggable with SpiritHelpers {

@@ -2,12 +2,13 @@ package org.unsane.spirit.news
 package snippet
 
 import net.liftweb.util.Helpers._
-import org.unsane.spirit.news.model.{ Config, ScheduleRecord}
+import org.unsane.spirit.news.model.{ ScheduleRecord}
 import xml.NodeSeq
 import net.liftweb.http.js.JsCmds._
 import net.liftweb.http.js.{JE, JsonCall, JsCmd,JsExp}
 import net.liftweb.http.{SessionVar, SHtml, S}
 import net.liftweb.common.Full
+import org.unsane.spirit.news.lib.Config
 
 /**
  * Rendering the Schedule for a given classname and week.
@@ -51,7 +52,7 @@ class Schedule extends Config {
   }
 
   classNameVar.get match {
-    case s if (allClassNamesAsLowercase contains s) =>
+    case s if allClassNamesAsLowercase contains s =>
     case "" =>
       classNameVar(allClassNamesAsLowercase.head.toLowerCase)
     case _ => S.redirectTo("/404")
@@ -125,11 +126,9 @@ class Schedule extends Config {
 
   def selectClassnameBox = {
 
-    val (name2, js) = SHtml.ajaxCall(JE.JsRaw("this.value"),
-                                     s => { classNameVar(s)
-                                            S.redirectTo("/schedule?classname=" + s)}): (String, JsExp) 
-                                            
-                                            
+    val (_, js): (String, JsExp) =
+      SHtml.ajaxCall(JE.JsRaw("this.value"),
+        s => { classNameVar(s); S.redirectTo("/schedule?classname=" + s)})
 
     SHtml.select(allClassNamesAsLowercase.map(x => (x,x)), Full(classNameVar.get),
                  x => x, "onchange" -> js.toJsCmd)
@@ -137,9 +136,9 @@ class Schedule extends Config {
 
   def selectWeekBox = {
 
-    val (name2, js) = SHtml.ajaxCall(JE.JsRaw("this.value"),
-                                     s => { weekTypeVar(s)
-                                            S.redirectTo("/schedule")}): (String, JsExp) 
+    val (_, js): (String, JsExp) =
+      SHtml.ajaxCall(JE.JsRaw("this.value"),
+        s => { weekTypeVar(s); S.redirectTo("/schedule")})
 
     SHtml.select(Seq(("g", "Gerade"),("u", "Ungerade"),("w", "Alles")),
       weekTypeVar.get match {

@@ -33,7 +33,7 @@
 package org.unsane.spirit.news
 package snippet
 
-import model.{ Entry, Config }
+import model.{ Entry }
 import scala.xml._
 import net.liftweb.util.Helpers._
 import net.liftweb.http.SHtml._
@@ -107,7 +107,5 @@ trait SpiritHelpers {
       }
       
   }
-
-  private val userhome = System.getProperty("user.dir")
 
 }
