@@ -49,15 +49,13 @@ import net.liftweb.json.Printer._
 
 
 
-object NewsSpec extends Specification with Config with Contexts {
+object NewsSpec extends Specification with Contexts {
 
   //implicit val formats = net.liftweb.json.DefaultFormats
 
   /* Defining our Database for Testing */
-  MongoDB.defineDbAuth(DefaultMongoIdentifier,
-    MongoAddress(MongoHost("127.0.0.1", 27017), "spirit_news"),
-    "spirit_news",
-    "spirit_news")
+  MongoDB.defineDb(DefaultMongoIdentifier,
+    MongoAddress(MongoHost("127.0.0.1", 27017), "spirit_news"))
 
   /* Line 54 - 81 is from the Lift Wiki! https://www.assembla.com/wiki/show/liftweb/Unit_Testing_Snippets_With_A_Logged_In_User! THANKS!*/
   val session = new LiftSession("", StringHelpers.randomString(20), Empty)

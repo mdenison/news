@@ -7,19 +7,19 @@ import net.liftweb.http.{SHtml, S}
 import org.unsane.spirit.news.lib.ScheduleParsingHelper
 import net.liftweb.common.Full
 import net.liftweb.http.js.{JE, JsonCall, JsCmd,JsExp}
+import org.unsane.spirit.news.lib.Config._
 
 /**
  * Rendering view for importing Data via timetable2db.
  */
 class ScheduleParser {
 
-    lazy val sph = ScheduleParsingHelper()
     val schedules = Seq(("new", "Neuer Stundenplan"), ("old", "Alter Stundenplan"))
-    val scheduleType = sph.loadChangeableProps("schedule")
+    val scheduleType = loadChangeableProps("schedule")
 
-    val (_, js): (String, JsExp) = SHtml.ajaxCall(JE.JsRaw("this.value"), s => sph.saveProps("schedule", s))
+    val (_, js): (String, JsExp) = SHtml.ajaxCall(JE.JsRaw("this.value"), s => saveProps("schedule", s))
 
-    val classNames = "alle" :: sph.allClassNamesAsLowercase
+    val classNames = "alle" :: allClassNamesAsLowercase
 
     def render = {
       "name=scheduleSwitch" #> SHtml.select(schedules, Full(scheduleType), x => x, "onchange" -> js.toJsCmd)

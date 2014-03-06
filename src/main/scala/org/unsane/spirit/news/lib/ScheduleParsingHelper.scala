@@ -5,7 +5,7 @@ import net.liftweb.http.js.JsCmd
 import java.io.{InputStreamReader, File, BufferedReader}
 import net.liftweb.http.S
 import net.liftweb.common.{Full, Loggable}
-import org.unsane.spirit.news.lib.Config
+import org.unsane.spirit.news.lib.Config._
 
 
 object ScheduleParsingHelper {
@@ -19,7 +19,7 @@ object ScheduleParsingHelper {
  * Runs timetable2db, catches all output and errors from the ProcessBuilder
  * logs it and hopefully works.
  */
-class ScheduleParsingHelper extends Loggable with Config {
+class ScheduleParsingHelper extends Loggable {
 
   class ParsingLogger(in: BufferedReader) extends Actor {
 

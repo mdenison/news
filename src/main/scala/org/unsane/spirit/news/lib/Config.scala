@@ -42,7 +42,7 @@ import org.unsane.spirit.news.model.User
  * Could have used Lift's Props, but using java.util.Properties fitted the solution in a better way.
  * @author Marcus Denison
  */
-trait Config {
+object Config {
 
   /**
    * loadSemesters loads the current semesters

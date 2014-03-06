@@ -8,15 +8,15 @@
  * are met:
  *
  * 1. Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
+ * notice, this list of conditions and the following disclaimer.
  *
  * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
  *
  * 3. Neither the name of the author nor the names of his contributors
- *    may be used to endorse or promote products derived from this software
- *    without specific prior written permission.
+ * may be used to endorse or promote products derived from this software
+ * without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHORS ``AS IS'' AND ANY EXPRESS OR
  * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
@@ -36,19 +36,18 @@ import scala.actors._
 import java.text.SimpleDateFormat
 import java.util._
 import net.liftweb.common.Loggable
-import org.unsane.spirit.news.snippet.SpiritHelpers
+import SpiritHelpers._
 
 /**
-  * DayChecker calls the method dayCheck every day to see if there are posts to delete
-  */
-object DayChecker extends Actor with Loggable with SpiritHelpers {
+ * DayChecker calls the method dayCheck every day to see if there are posts to delete
+ */
+object DayChecker extends Actor with Loggable {
 
   def act {
-    while(true) {
-      dayCheck 
+    while (true) {
+      dayCheck
       logger info "DayChecker doing his thing at " + new Date
       Thread sleep 86400000
-
     }
   }
 }

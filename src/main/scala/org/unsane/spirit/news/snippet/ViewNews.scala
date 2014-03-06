@@ -41,12 +41,14 @@ import model.{Entry}
 import net.liftweb.common.{Empty, Box, Full, Loggable}
 import net.liftweb.http.{SHtml, S}
 import net.liftweb.http.js.{JE, JsExp}
-import org.unsane.spirit.news.lib.Config
+import org.unsane.spirit.news.lib.{SpiritHelpers, Config}
+import SpiritHelpers._
+import Config._
 
 /**
  * @author Marcus Denison
  */
-class ViewNews extends SpiritHelpers with Loggable with Config {
+class ViewNews extends Loggable {
 
   /**
    * Pattern Matching if a search has begun.

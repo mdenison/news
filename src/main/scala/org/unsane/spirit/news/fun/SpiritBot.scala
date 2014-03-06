@@ -41,14 +41,14 @@ import scala.actors.Actor._
 import org.unsane.spirit.news.snippet._
 import scala.xml._
 import org.unsane.spirit.news.model._
-import org.unsane.spirit.news.lib.Config
+import org.unsane.spirit.news.lib.Config._
 
 /**
   * SpiritBot is a IRC Bot that sends the News to a Channel on the IRC Network
   * This is a Geeky/Nerdy Addon ;)! But not using it in production mode!
   * @author Marcus Denison
   */
-object SpiritBot extends Actor with Config {
+object SpiritBot extends Actor {
 
   def connect {
     try{

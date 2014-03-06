@@ -2,14 +2,14 @@ package org.unsane.spirit.news
 package snippet
 
 import net.liftweb.http.S
-import org.unsane.spirit.news.lib.Config
+import org.unsane.spirit.news.lib.Config._
 
 /**
  * Routing the user either to the New cool schedule or to the old uncool schedule.
  * Depends on if the panic switch was used.
  * @todo Don't know if this is the way to do it, but it works?!
  */
-class ScheduleDispatch extends Config {
+class ScheduleDispatch {
 
   loadChangeableProps("schedule") match {
     case "new" => S.redirectTo("/schedule")
@@ -24,7 +24,7 @@ class ScheduleDispatch extends Config {
 
 }
 
-class OldScheduleDispatch extends Config {
+class OldScheduleDispatch {
 
   loadChangeableProps("schedule") match {
     case "new" => S.redirectTo("/schedule")

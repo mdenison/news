@@ -8,14 +8,14 @@ import net.liftweb.http.js.JsCmds._
 import net.liftweb.http.js.{JE, JsonCall, JsCmd,JsExp}
 import net.liftweb.http.{SessionVar, SHtml, S}
 import net.liftweb.common.Full
-import org.unsane.spirit.news.lib.Config
+import org.unsane.spirit.news.lib.Config._
 
 /**
  * Rendering the Schedule for a given classname and week.
  *
  * @TODO This is a WIP, still work to be done!
  */
-class Schedule extends Config {
+class Schedule {
 
   loadChangeableProps("schedule") match {
     case "new" =>

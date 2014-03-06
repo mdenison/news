@@ -49,11 +49,12 @@ import common._
 import util._
 import util.Helpers._
 import mongodb._
+import Config._
 
 /**
  * @todo Please refactor me!
  */
-class Boot extends Loggable with Config {
+class Boot extends Loggable {
   def boot {
 
 

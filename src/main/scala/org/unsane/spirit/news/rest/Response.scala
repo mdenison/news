@@ -34,24 +34,21 @@ package org.unsane.spirit.news
 package rest
 
 import model._
-
 import net.liftweb.http._
 import net.liftweb.http.rest._
 import net.liftmodules.textile._
-
 import net.liftweb.json.JsonDSL._
 import net.liftweb.common.Box
 import net.liftweb.json.JArray
 import net.liftweb.common.Loggable
-
-
 import java.util.{Date, Locale}
-
 import java.text.SimpleDateFormat
 import net.liftweb.json.JsonAST.JValue
-import org.unsane.spirit.news.lib.Config
+import org.unsane.spirit.news.lib.Config._
 
-object Response extends Loggable with Config with RestHelper {
+case class EntryPreview(nr: String, date: String,  writer: String,  subject: String, semester: String)
+
+object Response extends Loggable with RestHelper {
 
   //implicit val formats = net.liftweb.json.DefaultFormats
 

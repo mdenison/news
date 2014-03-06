@@ -30,10 +30,8 @@
  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-package org.unsane.spirit.news
-package snippet
+package org.unsane.spirit.news.lib
 
-import model.{ Entry }
 import scala.xml._
 import net.liftweb.util.Helpers._
 import net.liftweb.http.SHtml._
@@ -44,11 +42,12 @@ import net.liftweb.common.Box
 import net.liftweb.http.{LiftResponse, S}
 import net.liftweb.common.Full
 import net.liftweb.http.StreamingResponse
+import org.unsane.spirit.news.model.Entry
 
 /**
  * @author Marcus Denison
  */
-trait SpiritHelpers {
+object SpiritHelpers {
 
   def semesterChanger(input: String): String = input match {
     case semester if (semester startsWith "semester ") => "Alle"

@@ -37,8 +37,10 @@ import net.liftweb.http._
 import net.liftweb.http.rest._
 import org.unsane.spirit.news.model.Entry
 import net.liftmodules.textile._
+import org.unsane.spirit.news.lib.SpiritHelpers
+import SpiritHelpers._
 
-object Feed extends RestHelper with SpiritHelpers {
+object Feed extends RestHelper {
 
   serve {
     case "feed" :: _ XmlGet _=>  {

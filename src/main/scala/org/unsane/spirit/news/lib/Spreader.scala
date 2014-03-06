@@ -41,6 +41,7 @@ import net.liftweb.common.Loggable
 
 import twitter4j._
 import auth.AccessToken
+import Config._
 
 /* This is one cool feature!
  * Spreader takes the Entry number, gets a TinyURL for this.
@@ -50,7 +51,7 @@ import auth.AccessToken
 
 case class Tweet(subject: String, semester: String, number: String)
 
-object Spreader extends Actor with Config with Loggable {
+object Spreader extends Actor with Loggable {
 
   private val twitter = new TwitterFactory().getInstance()
   twitter.setOAuthConsumer(loadProps("Consumer"), loadProps("ConsumerSecret"))

@@ -8,11 +8,11 @@ import net.liftweb.util.Mailer._
 import net.tanesha.recaptcha.{ReCaptchaFactory, ReCaptcha}
 import net.liftweb.common._
 import net.liftweb.util.{FieldIdentifier, FieldError, Mailer, Props}
-import org.unsane.spirit.news.lib.{ReCaptcha => RC, Config}
+import org.unsane.spirit.news.lib.{ReCaptcha => RC}
 import net.liftweb.http.{SessionVar, SHtml, S}
+import org.unsane.spirit.news.lib.Config._
 
-
-class Issues extends Loggable with RC with Config {
+class Issues extends Loggable with RC {
 
   case class issue(name: String, email: String, subject: String, issueText: String) {
 

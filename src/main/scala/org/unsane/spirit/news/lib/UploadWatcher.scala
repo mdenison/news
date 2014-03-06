@@ -5,9 +5,9 @@ import net.liftweb.common.Loggable
 import java.nio.file.WatchEvent.{Modifier, Kind}
 import java.nio.file.StandardWatchEventKinds._
 import java.io.{File, IOException}
-import org.unsane.spirit.news.lib.Config
+import org.unsane.spirit.news.lib.Config._
 
-object UploadWatcher extends Loggable with Config {
+object UploadWatcher extends Loggable {
 
   def run() = {
     val schedulePath = loadProps("timetable2db.schedulePath")

@@ -40,13 +40,13 @@ import net.liftweb.http.S
 import net.liftweb.util.Helpers._
 import net.liftweb.common._
 import net.liftweb.sitemap.Loc.Hidden
-import org.unsane.spirit.news.lib.Config
+import org.unsane.spirit.news.lib.Config._
 
 class User extends MegaProtoUser[User] {
   def getSingleton = User
 }
 
-object User extends User with MetaMegaProtoUser[User] with LDAPAuth with Config {
+object User extends User with MetaMegaProtoUser[User] with LDAPAuth {
 
   private val productive = loadProps("Productive") == "yes"
 

@@ -35,10 +35,8 @@ package snippet
 
 import scala.xml._
 import net.liftweb.util.Helpers._
-import net.liftweb.http.{ S }
 import net.liftweb.http.SHtml._
 import net.liftweb.http._
-import js.JsCmds._
 import net.liftweb.common._
 import net.liftmodules.textile._
 import java.text._
@@ -46,11 +44,14 @@ import java.util.Date
 import java.util.Locale
 import net.liftweb.json.JsonDSL._
 import model._
-import net.liftweb.util.Props
 import scala.concurrent.stm._
-import org.unsane.spirit.news.lib.{Spreader, Tweet, Config, MailHandler}
+import org.unsane.spirit.news.lib._
+import net.liftweb.common.Full
+import org.unsane.spirit.news.lib.Tweet
+import SpiritHelpers._
+import Config._
 
-class CRUDEntry extends Loggable with SpiritHelpers with Config with EntryPreview {
+class CRUDEntry extends Loggable with EntryPreview {
 
   var tweetUpdate = false
   private lazy val date = df.format(new Date)
